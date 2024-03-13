@@ -1,0 +1,30 @@
+class Solution {
+    public int pivotInteger(int n) {
+        if(n==1)
+        {
+            return n;
+        }
+        int left=1;
+        int right=n;
+        int leftSum=left;
+        int rightSum=right;
+        while(left<right)
+        {
+        if(leftSum<rightSum)
+        {
+            left++;
+            leftSum+=left;
+        }
+        else
+        {
+            right--;
+            rightSum+=right;
+        }
+        if(leftSum==rightSum && left+1==right-1)
+        {
+            return left+1;
+        }
+        }
+        return -1;
+    }
+}
